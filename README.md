@@ -1,4 +1,4 @@
-# nlp
+# NLP
 No Life Project
 
     1. Make the UI with tkinter
