@@ -1,8 +1,12 @@
 # nlp
 No Life Project
 
-ToDo:
-    > Make the UI with tkinter
-    > Give functionality to the UI
-        > Make the fields input data
-        > Store those inputs into a database
+    1. Make the UI with tkinter
+    
+    2. Give functionality to the UI
+    
+        2.1 Make the fields input data
+        
+        2.2 Store those inputs into a database
+
+![erd](https://github.com/Sansith31/nlp/assets/56215884/df373de5-5179-42c0-86f5-9081e181fec5)
