@@ -1,23 +1,25 @@
 import tkinter as tk
 from tkinter import messagebox
+from tkcalendar import DateEntry
 
 def submit():
-    # Retrieve data from entry fields
+    # Retrieve data from entry fields and calendar
     name = name_entry.get()
     age = age_entry.get()
     email = email_entry.get()
+    dob = dob_calendar.get_date()
 
     # Check if any field is empty
-    if not (name and age and email):
+    if not (name and age and email and dob):
         messagebox.showerror("Error", "Please fill in all fields.")
         return
 
     # Display the submitted data
-    messagebox.showinfo("Submission Successful", f"Name: {name}\nAge: {age}\nEmail: {email}")
+    messagebox.showinfo("Submission Successful", f"Name: {name}\nAge: {age}\nEmail: {email}\nDate of Birth: {dob}")
 
 # Create the main window
 root = tk.Tk()
-root.title("Zatabase")
+root.title("User Input Form")
 
 # Create labels and entry fields for each input
 name_label = tk.Label(root, text="Name:")
@@ -35,9 +37,14 @@ email_label.grid(row=2, column=0, padx=10, pady=5, sticky="e")
 email_entry = tk.Entry(root)
 email_entry.grid(row=2, column=1, padx=10, pady=5)
 
+dob_label = tk.Label(root, text="Date of Birth:")
+dob_label.grid(row=3, column=0, padx=10, pady=5, sticky="e")
+dob_calendar = DateEntry(root, selectmode="day", date_pattern="yyyy-mm-dd")
+dob_calendar.grid(row=3, column=1, padx=10, pady=5)
+
 # Create a submit button
 submit_button = tk.Button(root, text="Submit", command=submit)
-submit_button.grid(row=3, columnspan=2, padx=10, pady=10)
+submit_button.grid(row=4, columnspan=2, padx=10, pady=10)
 
 # Run the main event loop
 root.mainloop()
