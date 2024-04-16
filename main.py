@@ -3,6 +3,11 @@ from datetime import date
 import tkinter as tk
 from tkinter import messagebox
 from tkcalendar import DateEntry
+from module import *
+
+# Connecting to the database
+cursor = None
+connect()
 
 year = date.today().year
 random = rnd.randint(1000, 9999)
@@ -22,6 +27,9 @@ def submit():
     if not (name and dob and gender and contact and email and pathway):
         messagebox.showerror("Error", "Please fill in all fields.")
         return
+    
+    # Storing data
+    store(idNo, name, dob, gender, contact, email, pathway)
 
     # Display the submitted data
     messagebox.showinfo("Submission Successful", f"ID: {idNo}\nName: {name}\nDate of Birth: {dob}\nGender: {gender}\nContact: {contact}\nEmail: {email}\nPathway: {pathway}\n")
