@@ -9,7 +9,7 @@ CREATE TABLE student
     gender VARCHAR(1),
     contact INT,
     email VARCHAR(50),
-    pathway VARCHAR(10),
+    pathway VARCHAR(50),
     PRIMARY KEY(studentid),
     FOREIGN KEY(pathway) REFERENCES pathway(pathwayname)
 );

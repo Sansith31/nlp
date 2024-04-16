@@ -6,7 +6,9 @@ from tkcalendar import DateEntry
 from module import *
 
 # Connecting to the database
+conn = None
 cursor = None
+
 connect()
 
 year = date.today().year
@@ -17,7 +19,7 @@ idNo = int(f"{year}{random}")
 def submit():
     # Retrieve data from entry fields
     name = name_entry.get()
-    dob = dob_calendar.get_date()
+    dob = str(dob_calendar.get_date())
     gender = gender_entry.get()
     contact = contact_entry.get()
     email = email_entry.get()
@@ -33,6 +35,9 @@ def submit():
 
     # Display the submitted data
     messagebox.showinfo("Submission Successful", f"ID: {idNo}\nName: {name}\nDate of Birth: {dob}\nGender: {gender}\nContact: {contact}\nEmail: {email}\nPathway: {pathway}\n")
+
+    # Closing the database
+    commit()
 
 # Create the main window
 root = tk.Tk()
