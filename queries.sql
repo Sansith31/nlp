@@ -23,3 +23,9 @@ CREATE TABLE pathway
     module4 VARCHAR(50),
     PRIMARY KEY(pathwayname)
 );
+
+INSERT INTO pathway
+VALUES ("Computer Science", "Programming Fundamentals", "Web Designing", "Mathematics for Computing", "Networking Fundamentals"),
+("Software Engineering", "Programming Fundamentals", "Web Designing", "Software Development", "Networking Fundamentals"),
+("Data Science", "Programming Fundamentals", "Working with Data", "Mathematics for Data Science", "Data Structures and Algorithms"),
+("Business Management", "Introduction to Economics", "Project Management", "Mathematics for Business", "Marketing");
